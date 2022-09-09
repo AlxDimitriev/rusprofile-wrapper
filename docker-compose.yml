@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    ports:
+      - "9090:9090"
+    command: gateway

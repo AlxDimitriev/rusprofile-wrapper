@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package rpc_server;
+
+import "google/api/annotations.proto";
+
+option go_package = "internal/rpc_server";
+
+service CompanyInfoService {
+  rpc FetchCompanyInfo (CompanyRequest) returns (CompanyResponse) {
+    option (google.api.http) = {
+      get: "/inn/{INN}"
+    };
+  }
+}
+
+message CompanyRequest {
+  uint64 INN = 1;
+}
+
+message CompanyResponse {
+  uint64 INN = 1;
+  uint32 KPP = 2;
+  string companyName = 3;
+  string directorFullName = 4;
+}
