@@ -1,1 +1,10 @@
-# rusprofile-wrapper
+# Обертка над http://www.rusprofile.ru
+
+Предоставляет API через gRPC и HTTP
+
+Принимает ИНН компании, возвращает ИНН, КПП, название, ФИО руководителя.
+
+Пример запроса HTTP:
+curl -XGET http://localhost:9090/inn/7840005720
+
+Документация к API через Swagger UI доступна по порту :9090
